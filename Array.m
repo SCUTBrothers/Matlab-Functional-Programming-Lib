@@ -24,9 +24,9 @@ classdef Array < handle
 
         function res = isEmpty(this)
             if this.length == 0
-                res = true
+                res = true;
             else
-                res = false
+                res = false;
             end
         end
         
@@ -86,10 +86,11 @@ classdef Array < handle
             end
 
             for i = startIndex:(this.length)
-                accumulator = callback(accumulator, this.value(i), i, this)
+                accumulator = callback(accumulator, this.value(i), i, this);
             end
         end
 
+        % callback(currentValue, index, thisArr)
         function newArr = map(this, callback)
             if this.isEmpty
                 newArr = Array([]);
